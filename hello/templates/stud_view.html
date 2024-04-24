@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="{{ url_for('static',filename='js/j1.js')}}"></script> -->
+
+</head>
+<body>
+    <h1>VIEW STUDENT LIST</h1>
+
+    <table border="2px ">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>number</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.number }}</td>
+                <td>
+                    <a href="http://127.0.0.1:5000/sd/{{ i.id }}">DELETE</a>
+                </td>
+                <td>
+                    <a href="http://127.0.0.1:5000/su/{{ i.id }}">EDIT</a>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
